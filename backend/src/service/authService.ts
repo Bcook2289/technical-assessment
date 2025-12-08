@@ -68,8 +68,8 @@ export const loginUser = async (data: userData) => {
     }
 }
 
-// Logout user (cache cleared on frontend)
-export const logoutUser = async () => {
+// Logout user (cache cleared in authRoutes)
+export const logoutUser = () => {
     return {
         message: "Logout Successful"
     };
