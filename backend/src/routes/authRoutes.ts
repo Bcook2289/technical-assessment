@@ -1,13 +1,16 @@
-import express from "express";
+// import express from "express";
+import { Router } from "express";
 import { registerUser, loginUser, logoutUser, deleteUser } from "../service/authService";
 import { authenticate } from "../middleware/middleware";
 import { AuthRequest } from "../types/common";
 
-const router = express.Router();
+const router = Router();
 
 // register user
 router.post("/register", async (req, res) => {
     const { email, password } = req.body;
+    console.log("BODY RECEIVED:", req.body);
+
     try {
         const user = await registerUser({email, password});
         return res.status(201).json({
@@ -22,6 +25,7 @@ router.post("/register", async (req, res) => {
 // login user
 router.post("/login", async (req, res) => {
     const {email, password} = req.body;
+    console.log("BODY RECEIVED FOR LOGIN API:", req.body);
     try {
         const {token, user} = await loginUser({email, password});
         res.cookie("token", token, {
@@ -89,3 +93,5 @@ router.delete("/delete", async (req, res) => {
 router.get("/me", authenticate, async (req: AuthRequest, res) => {
     return res.json({user: req.user});
 })
+
+export default router;
