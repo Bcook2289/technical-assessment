@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
 // import { PrismaClient } from "@prisma/client";
 
 dotenv.config();
@@ -10,6 +11,7 @@ const PORT = process.env.PORT || 4000;
 // const prisma = new PrismaClient();
 
 app.use(cors());
+app.use(cookieParser());
 app.use(express.json());
 
 app.get("/", (_req, res) => {
