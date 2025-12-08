@@ -19,6 +19,7 @@ const findUniqueUser = async (email: string, password?: string): Promise<User> =
     }
 
     if(password) {
+        await isPasswordValid(user, password);
     }
 
     return user;
