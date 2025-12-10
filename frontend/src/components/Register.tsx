@@ -55,7 +55,7 @@ const Register = () => {
                     <div className="flex gap-4 justify-between">
                         <label htmlFor="password">Password:</label>
                         <input 
-                            type="text"
+                            type="password"
                             className="bg-white rounded-md text-black"
                             placeholder="*********"
                             value={password}
@@ -66,7 +66,7 @@ const Register = () => {
                     <div className="flex gap-4 justify-between">
                         <label htmlFor="confirmPassword">Confirm Password:</label>
                         <input 
-                            type="text"
+                            type="password"
                             className="bg-white rounded-md text-black"
                             placeholder="*********"
                             value={confirmPassword}

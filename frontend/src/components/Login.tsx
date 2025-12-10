@@ -4,12 +4,6 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "../context/AuthContext";
 
-
-type User = {
-    email: string;
-    password: string;
-}
-
 const Login = () => {
     const {user, login, checkAuth} = useAuth();
     const router = useRouter();
@@ -19,16 +13,16 @@ const Login = () => {
     const [error, setError] = useState<string|null>(null);
     const [loading, setLoading] = useState(false);
 
-    // TODO: REFACTOR TO REMOVE REDUNDANCY
     useEffect(() => {
+        if(user === null) {
+            return;
+        }
+        let cancelled = false;
         const verifyUser = async () => {            
             try {
-                if(user) {
-                    router.replace("/success");
-                    return;
-                }
-                const currentUser: User | null = await checkAuth();
-                if(currentUser) {
+                const currentUser = await checkAuth();
+
+                if (!cancelled && currentUser) {
                     router.replace("/success");
                 }
             } catch (error) {
@@ -36,7 +30,10 @@ const Login = () => {
             }
         };
         verifyUser(); 
-    }, [user, checkAuth, router]);
+        return () => {
+            cancelled = true;
+        }
+    }, [checkAuth, router]);
 
     const handleRegisterClick = () => {
         router.push("/register");
@@ -48,7 +45,6 @@ const Login = () => {
         setLoading(true);
 
         try {
-
             await login(email, password);
             await checkAuth();
             router.push("/success");
