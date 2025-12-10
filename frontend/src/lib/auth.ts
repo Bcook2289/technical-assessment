@@ -24,10 +24,9 @@ export async function logoutUser () {
 }
 
 // delete
-export async function deleteUser (email: string) {
+export async function deleteUser () {
     return apiFetch("/auth/delete", {
         method: "DELETE",
-        body: JSON.stringify({email})
     })
 }
 

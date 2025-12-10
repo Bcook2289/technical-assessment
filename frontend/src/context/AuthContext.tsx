@@ -77,9 +77,9 @@ export const AuthProvider = ({ children }:{ children:React.ReactNode }) => {
         }
     }
 
-    const deleteCurrentUser = async (email: string) =>{
+    const deleteCurrentUser = async () =>{
         try {
-            await deleteUser(email);
+            await deleteUser();
             setUser(null);
             await checkAuth();
         } catch(error) {

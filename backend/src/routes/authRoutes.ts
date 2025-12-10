@@ -75,11 +75,11 @@ router.post("/logout", async (_req, res) => {
 })
 
 // Delete user
-router.delete("/delete", async (req, res) => {
-    const { email } = req.body;
+router.delete("/delete", authenticate, async (req:AuthRequest, res) => {
+    const email  = req.user?.email;
      
     if(!email) {
-        return res.status(400).json({error: "Email is required"});
+        return res.status(400).json({error: "Email is required"}); 
     }
     try {
         await deleteUser(email);
