@@ -72,6 +72,7 @@ export const AuthProvider = ({ children }:{ children:React.ReactNode }) => {
     const register = async (email: string, password: string) => {
         try {
             await registerUser(email, password);
+            alert("User Created");
         } catch (error) {
             throw error;
         }
@@ -81,6 +82,7 @@ export const AuthProvider = ({ children }:{ children:React.ReactNode }) => {
         try {
             await deleteUser();
             setUser(null);
+            alert("User Deleted");
             await checkAuth();
         } catch(error) {
             throw error;

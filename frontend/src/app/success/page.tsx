@@ -55,6 +55,7 @@ export default function Success() {
         try {
             if (activeUser) {
                 await deleteCurrentUser(activeUser.email);
+                router.push("/");
             }
         } catch (error: unknown) {
             if (error instanceof Error) {
