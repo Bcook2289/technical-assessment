@@ -1,7 +1,9 @@
-export const API_URL = process.env.PUBLIC_URL || "http://localhost:4000/api";
+export const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000/api";
 
 export async function apiFetch(endpoint: string, options: RequestInit = {}) {
     const formData = options.body instanceof FormData;
+
+    console.log("apiFetch triggered")
 
     const res = await fetch(`${API_URL}${endpoint}`, {
         headers: {
@@ -24,5 +26,6 @@ export async function apiFetch(endpoint: string, options: RequestInit = {}) {
         throw new Error(errorMessage);
     }
 
+    console.log(data);
     return data;
 }

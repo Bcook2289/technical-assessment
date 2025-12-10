@@ -1,3 +1,5 @@
+"use client";
+
 import { useAuth } from "@/src/context/AuthContext";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -14,7 +16,7 @@ export default function Success() {
         const verifyUser = async () => {
             try {
                 setLoading(true);
-                const currentUser = user ?? (await checkAuth());
+                const currentUser = user ?? await checkAuth();
                 setActiveUser(currentUser);
                 if (!currentUser) {
                     router.push("/");
@@ -53,6 +55,7 @@ export default function Success() {
         try {
             if (activeUser) {
                 await deleteCurrentUser(activeUser.email);
+                router.push("/");
             }
         } catch (error: unknown) {
             if (error instanceof Error) {

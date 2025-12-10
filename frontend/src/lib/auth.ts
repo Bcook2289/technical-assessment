@@ -10,6 +10,7 @@ export async function registerUser (email: string, password: string) {
 
 // login
 export async function loginUser (email: string, password: string) {
+    console.log("loginUser triggered...")
     return apiFetch("/auth/login", {
         method: "POST",
         body: JSON.stringify({email, password})

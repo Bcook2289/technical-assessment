@@ -30,7 +30,7 @@ router.post("/login", async (req, res) => {
         const {token, user} = await loginUser({email, password});
         res.cookie("token", token, {
             httpOnly: true,
-            secure: process.env.NODE_ENV === "production",
+            secure: process.env.NODE_ENV === "production" ? true : false,
             sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
             maxAge: 24 * 60 * 60 * 1000 // save for one day
         });
