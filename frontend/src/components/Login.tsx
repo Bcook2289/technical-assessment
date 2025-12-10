@@ -49,6 +49,7 @@ const Login = () => {
 
         try {
             await login(email, password);
+            await checkAuth();
             router.push("/success");
         } catch (error: unknown) {
             if (error instanceof Error) {
