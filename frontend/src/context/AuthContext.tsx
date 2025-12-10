@@ -83,7 +83,6 @@ export const AuthProvider = ({ children }:{ children:React.ReactNode }) => {
             await deleteUser();
             setUser(null);
             alert("User Deleted");
-            await checkAuth();
         } catch(error) {
             throw error;
         }
