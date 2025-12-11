@@ -192,7 +192,7 @@ AI tools were used to diagnose and resolve issues such as:
 - Git set up errors
 
 Prompts in this typically followed this pattern:
-```bash
+```
 I'm getting the following error when trying to do [EXPLANATION OF ACTIONS TAKEN]
 
 [ERROR DESCRIPTION]
@@ -203,6 +203,7 @@ I'm getting the following error when trying to do [EXPLANATION OF ACTIONS TAKEN]
 - Provide reference patterns for structuring AuthContext
 
 Prompts in this category generally followed this pattern/structure and were more freeform:
-```bash
+```
 Please provide an explanation of [INSERT TOPIC HERE]
 ```
+
