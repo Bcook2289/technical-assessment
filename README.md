@@ -3,7 +3,6 @@
 ## Fullstack Login Function
 
 My submission for Goalconnect's technical assessment to implement a login function using any language and framework. I chose Typescript, node.js and express in the backend, and next.js and tailwind for the frontend. I'm also using Prisma for my ORM for database interaction. I'll go into further detail about feature set and installation steps below. 
-
 ---
 
 ## Highlights
@@ -38,6 +37,12 @@ My submission for Goalconnect's technical assessment to implement a login functi
 ### **Database** 
 #### ![SQLite](https://img.shields.io/badge/SQLite-000?style=for-the-badge&logo=sqlite&logoColor=07405E)
 ### **Authentication** | JWT
+
+---
+
+## Project Management and Workflow
+
+[Github Projects Board]https://github.com/users/Bcook2289/projects/4/views/1
 
 ---
 ## Feature Set for Authentication System
@@ -206,4 +211,5 @@ Prompts in this category generally followed this pattern/structure and were more
 ```
 Please provide an explanation of [INSERT TOPIC HERE]
 ```
+
 
