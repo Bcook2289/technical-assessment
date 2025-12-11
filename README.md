@@ -91,43 +91,30 @@ My submission for Goalconnect's technical assessment to implement a login functi
 
 ## Backend (Node/Express + Prisma + JWT)
 ### Authentication API
-
 ```bash POST /api/auth/register``` — register a new user.
-POST /api/auth/login — authenticate user and set JWT cookie.
-GET /api/auth/me — returns current user from valid JWT.
-POST /api/auth/logout — clears session cookie.
-DELETE /api/auth/delete — deletes user account.
+```bash POST /api/auth/login``` — authenticate user and set JWT cookie.
+```bash GET /api/auth/me``` — returns current user from valid JWT.
+```bash POST /api/auth/logout``` — clears session cookie.
+```bash DELETE /api/auth/delete``` — deletes user account.
 
-Security
+### Security
+- JWT-based session verification with secret signing key.
+- HTTP-only cookies (prevents client-side script access).
+- Strict password handling (no plain-text storage).
+- Input sanitization and schema validation to prevent malformed payloads.
 
-JWT-based session verification with secret signing key.
+## Database (SQLite + Prisma ORM)
+### Schema
+- Lightweight User model with indexed email field.
+- Auto-generated migrations and schema management via Prisma.
+### Data Access Layer
+- Prisma client for safe, typed DB queries.
+- Automatic escaping to prevent SQL injection.
+- Transaction-safe user creation and deletion.
+### Local Development
+- Zero-config SQLite database for easy local setup.
+- Environment-driven DATABASE_URL configuration.
 
-HTTP-only cookies (prevents client-side script access).
-
-Strict password handling (no plain-text storage).
-
-Input sanitization and schema validation to prevent malformed payloads.
-
-Database (SQLite + Prisma ORM)
-Schema
-
-Lightweight User model with indexed email field.
-
-Auto-generated migrations and schema management via Prisma.
-
-Data Access Layer
-
-Prisma client for safe, typed DB queries.
-
-Automatic escaping to prevent SQL injection.
-
-Transaction-safe user creation and deletion.
-
-Local Development
-
-Zero-config SQLite database for easy local setup.
-
-Environment-driven DATABASE_URL configuration.
 ---
 
 ## Project Setup
@@ -190,6 +177,7 @@ Ensure you have the following installed:
    ```
    
    The server will be accessible at `http://localhost:4000`.
+
 
 
 
