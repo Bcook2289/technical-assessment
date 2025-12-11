@@ -42,7 +42,7 @@ My submission for Goalconnect's technical assessment to implement a login functi
 
 ## Project Management and Workflow
 
-[Github Projects Board]: https://github.com/users/Bcook2289/projects/4/views/1
+[Github Projects Board][https://github.com/users/Bcook2289/projects/4/views/1]
 
 ---
 ## Feature Set for Authentication System
@@ -211,6 +211,7 @@ Prompts in this category generally followed this pattern/structure and were more
 ```
 Please provide an explanation of [INSERT TOPIC HERE]
 ```
+
 
 
 
