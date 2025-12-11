@@ -36,7 +36,7 @@ My submission for Goalconnect's technical assessment to implement a login functi
 ### **ORM**
 #### ![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)
 ### **Database** 
-#### ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?logo=postgresql&logoColor=white)
+#### ![SQLite](https://img.shields.io/badge/SQLite-000?style=for-the-badge&logo=sqlite&logoColor=07405E)
 ### **Authentication** | JWT
 
 ---
@@ -101,4 +101,5 @@ Ensure you have the following installed:
    ```
    
    The server will be accessible at `http://localhost:4000`.
+
 
