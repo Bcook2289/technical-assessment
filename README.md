@@ -93,7 +93,7 @@ Ensure you have the following installed:
    PORT
    FRONTEND_URL
    JWT_SECRET
-   NODE_ENV (optional - only for production)
+   NODE_ENV //optional - only for production
    ```
 4. **Run the application**
    ```bash
@@ -101,5 +101,6 @@ Ensure you have the following installed:
    ```
    
    The server will be accessible at `http://localhost:4000`.
+
 
 
