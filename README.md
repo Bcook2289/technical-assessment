@@ -178,7 +178,31 @@ Ensure you have the following installed:
    
    The server will be accessible at `http://localhost:4000`.
 
+## AI Use
 
+AI tools were specifically used in a support function throughout the development process to accelerate problem-solving, validate decisions, and targeted debugging assistance. **It was not used as a replacement for implementation** to ensure that all code was written and tested by hand.
 
+### Problem-solving and Debugging
+AI tools were used to diagnose and resolve issues such as:
 
+- AuthContext not triggering fetch commands and preventing cookie transmission
+- intial Prisma set up
+- Prisma version differences
+- Diagnose TypeScript errors
+- Git set up errors
 
+Prompts in this typically followed this pattern:
+```bash
+I'm getting the following error when trying to do [EXPLANATION OF ACTIONS TAKEN]
+
+[ERROR DESCRIPTION]
+```
+
+### Decision validation
+- Validate backend architectural decisions (SQLite vs PostgreSQL)
+- Provide reference patterns for structuring AuthContext
+
+Prompts in this category generally followed this pattern/structure and were more freeform:
+```bash
+Please provide an explanation of [INSERT TOPIC HERE]
+```
