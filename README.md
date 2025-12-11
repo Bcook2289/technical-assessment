@@ -1,12 +1,12 @@
 ﻿# Practical Technical Test
 
-# Fullstack Login Function
+## Fullstack Login Function
 
 My submission for Goalconnect's technical assessment to implement a login function using any language and framework. I chose Typescript, node.js and express in the backend, and next.js and tailwind for the frontend. I'm also using Prisma for my ORM for database interaction. I'll go into further detail about feature set and installation steps below. 
 
 ---
 
-## Features
+## Highlights
 
 - **User Registration** - Create new user accounts using validated email/password inputs.
 - **Password Hashing** - Passwords are hashed using bcrypt.
@@ -40,6 +40,95 @@ My submission for Goalconnect's technical assessment to implement a login functi
 ### **Authentication** | JWT
 
 ---
+## Feature Set for Authentication System
+## Core Features
+### User Registration
+
+- Create new user accounts using validated email/password inputs.
+- Password hashing using industry-standard algorithms (e.g., bcrypt).
+- Automatic creation of user records via Prisma ORM.
+- Server-side input validation to enforce email format and password rules.
+
+### User Login
+
+- Email/password authentication with a secure API endpoint.
+- Stateless authentication using JWT access tokens.
+- HTTP-only cookies for secure token storage (prevents XSS token theft).
+- Server-side verification of JWT signatures on protected routes.
+
+### User Session Management
+
+- Persistent login using cookies.
+- Automatic session restoration on page refresh using checkAuth().
+- Client-side AuthContext managing user state and authentication flow.
+- Logout endpoint that invalidates session cookies.
+
+### Protected Routes
+
+- Route guarding on the frontend with redirect-to-login behavior.
+- Middleware-based authorization on the backend for sensitive operations.
+
+### Delete Account
+- Authenticated deletion endpoint.
+- Prisma integration to remove user data from SQLite database.
+- Automatic client logout and redirect upon account removal.
+
+## Frontend (Next.js + Tailwind + TypeScript)
+### UI Components
+- Responsive login, register, and success dashboard screens.
+- Tailwind-based input styling with focus states and dark-mode support.
+- Shared base UI classes using Tailwind’s @apply (e.g., buttons, forms).
+- Error states and inline form validation.
+
+### User Experience Flow
+- Automatic redirects (e.g., logged-in users cannot access login/register).
+- Loading indicators during API calls.
+- Toasts or UI messages for success, errors, and account deletion.
+
+### State Management
+- Global authentication state using React Context.
+- Hooks for login, logout, registration, and user validation.
+
+## Backend (Node/Express + Prisma + JWT)
+### Authentication API
+
+```bash POST /api/auth/register``` — register a new user.
+POST /api/auth/login — authenticate user and set JWT cookie.
+GET /api/auth/me — returns current user from valid JWT.
+POST /api/auth/logout — clears session cookie.
+DELETE /api/auth/delete — deletes user account.
+
+Security
+
+JWT-based session verification with secret signing key.
+
+HTTP-only cookies (prevents client-side script access).
+
+Strict password handling (no plain-text storage).
+
+Input sanitization and schema validation to prevent malformed payloads.
+
+Database (SQLite + Prisma ORM)
+Schema
+
+Lightweight User model with indexed email field.
+
+Auto-generated migrations and schema management via Prisma.
+
+Data Access Layer
+
+Prisma client for safe, typed DB queries.
+
+Automatic escaping to prevent SQL injection.
+
+Transaction-safe user creation and deletion.
+
+Local Development
+
+Zero-config SQLite database for easy local setup.
+
+Environment-driven DATABASE_URL configuration.
+---
 
 ## Project Setup
 
@@ -64,7 +153,7 @@ Ensure you have the following installed:
     ```
 
 3. **Required Environment Variables**:
-    ```
+    ```bash
     NEXT_PUBLIC_API_URL
     ```
 
@@ -101,6 +190,7 @@ Ensure you have the following installed:
    ```
    
    The server will be accessible at `http://localhost:4000`.
+
 
 
 
