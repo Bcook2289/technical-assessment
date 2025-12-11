@@ -101,3 +101,4 @@ Ensure you have the following installed:
    ```
    
    The server will be accessible at `http://localhost:4000`.
+
