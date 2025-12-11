@@ -70,7 +70,7 @@ export default function Success() {
       <main className="main-container">
         <div className="div-container">
           {loading ? (
-            <p>Loading...</p>
+            <p className="text-black">Loading...</p>
           ) : (
             <div className="div-container m-8">
               <h1 className="p-4">Welcome!</h1>

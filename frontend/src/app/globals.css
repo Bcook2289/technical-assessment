@@ -36,7 +36,7 @@ body {
 
 @layer components {
   .btn {
-    @apply rounded px-2 py-2 border text-sm font-bold transition-colors cursor-pointer hover:scale-110 dark:bg-black dark:text-white hover:bg-white hover:text-black;
+    @apply rounded px-2 py-2 border text-sm font-bold transition-colors cursor-pointer hover:scale-110 dark:bg-black dark:text-white hover:bg-white hover:text-black active:scale-100;
   }
 
   .text-input {
