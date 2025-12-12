@@ -24,3 +24,29 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer base {
+  h1 {
+    @apply text-xl uppercase font-bold;
+  }
+  p {
+    @apply text-red-500 font-bold;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply rounded px-2 py-2 border text-sm font-bold transition-colors cursor-pointer hover:scale-110 dark:bg-black dark:text-white hover:bg-white hover:text-black active:scale-100;
+  }
+
+  .text-input {
+    @apply rounded px-2 bg-white text-black border border-black focus:border-white dark:focus:border-black;
+  }
+
+  .div-container {
+    @apply flex flex-col justify-center items-center m-4 p-4 bg-black dark:bg-white dark:text-black text-white rounded-md;
+  }
+  .main-container {
+    @apply flex flex-col justify-center items-center m-4 min-h-screen;
+  }
+}
