@@ -29,9 +29,6 @@ body {
   h1 {
     @apply text-xl uppercase font-bold;
   }
-  p {
-    @apply text-red-500 font-bold;
-  }
 }
 
 @layer components {
@@ -48,5 +45,8 @@ body {
   }
   .main-container {
     @apply flex flex-col justify-center items-center m-4 min-h-screen;
+  }
+  .error {
+    @apply text-red-500 font-bold;
   }
 }

@@ -44,6 +44,12 @@ const Login = () => {
     setError(null);
     setLoading(true);
 
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!regex.test(email)) {
+        setError("Email format is incorrect")
+        return;
+    }
+
     try {
       await login(email, password);
       await checkAuth();
@@ -97,7 +103,7 @@ const Login = () => {
             </button>
           </div>
         </form>
-        {error && <p className="pt-4">{error}</p>}
+        {error && <p className="error pt-4">{error}</p>}
       </div>
     </>
   );
