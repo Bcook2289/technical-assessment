@@ -88,7 +88,7 @@ My submission for Goalconnect's technical assessment to implement a login functi
 ### User Experience Flow
 - Automatic redirects (e.g., logged-in users cannot access login/register).
 - Loading indicators during API calls.
-- Toasts or UI messages for success, errors, and account deletion.
+- UI messages for success, errors, and account deletion.
 
 ### State Management
 - Global authentication state using React Context.
@@ -212,6 +212,9 @@ Prompts in this category generally followed this pattern/structure and were more
 Please provide an explanation of [INSERT TOPIC HERE]
 ```
 
+### Translations
+
+This project also utilizes AI to provide accurate bilingual translations between English and Japanese to support clear communication and documentation.
 
 
 
