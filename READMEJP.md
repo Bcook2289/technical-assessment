@@ -220,6 +220,8 @@ I'm getting the following error when trying to do [EXPLANATION OF ACTIONS TAKEN]
 Please provide an explanation of [INSERT TOPIC HERE]
 ```
 
+### 翻訳
+
 本プロジェクトでは、英語と日本語の双方向翻訳を正確に行うためにAIも活用し、円滑なコミュニケーションとドキュメント作成を支援しています。
 
 
