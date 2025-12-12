@@ -1,16 +1,30 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-// import { PrismaClient } from "@prisma/client";
+import cookieParser from "cookie-parser";
+import authRoutes from "./routes/authRoutes";
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 4000;
-// const prisma = new PrismaClient();
 
-app.use(cors());
+const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:3000";
+
+app.use(cors({
+    origin: FRONTEND_URL,
+    credentials: true
+}));
+
+app.use((req, _res, next) => {
+    console.log("Incoming Request: ", req.method, req.url);
+    next();
+})
+
+app.use(cookieParser());
 app.use(express.json());
+
+app.use("/api/auth", authRoutes);
 
 app.get("/", (_req, res) => {
     res.send("Running");

@@ -42,6 +42,9 @@ export const registerUser = async (data: userData) => {
     if (userExists) {
         throw new Error("User already exists");
     }
+    if(data.password.length === 0) {
+        throw new Error("Invalid Password");
+    }
 
     const user = await prisma.user.create({
         data: {
@@ -68,8 +71,8 @@ export const loginUser = async (data: userData) => {
     }
 }
 
-// Logout user (cache cleared on frontend)
-export const logoutUser = async () => {
+// Logout user (cache cleared in authRoutes)
+export const logoutUser = () => {
     return {
         message: "Logout Successful"
     };
