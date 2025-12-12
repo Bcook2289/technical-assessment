@@ -33,19 +33,34 @@ const isPasswordValid = async (user: User, password: string) => {
     }
 };
 
+// Check if email is valid
+const isEmailValid = (email: string):boolean => {
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if(regex.test(email)) {
+        return true;
+    }
+    return false;
+}
+
 // Register a new UNIQUE user
 export const registerUser = async (data: userData) => {
-    const hashPassword = await bcrypt.hash(data.password, 10);
+    if(!isEmailValid(data.email)) {
+        throw new Error("Invalid Email Format");
+    }
+    
+    if(!data.password || data.password.length === 0) {
+        throw new Error("Invalid Password");
+    }
+    
     const userExists = await prisma.user.findFirst({
         where: {email: data.email}
     })
+    
     if (userExists) {
         throw new Error("User already exists");
     }
-    if(data.password.length === 0) {
-        throw new Error("Invalid Password");
-    }
-
+    
+    const hashPassword = await bcrypt.hash(data.password, 10);
     const user = await prisma.user.create({
         data: {
             email: data.email,

@@ -92,7 +92,7 @@ export default function Success() {
               </div>
             </div>
           )}
-          {error && <div className="text-red-600 text-sm"> {error} </div>}
+          {error && <p className="error"> {error} </p>}
         </div>
       </main>
     </>

@@ -19,6 +19,11 @@ const Register = () => {
     setError(null);
     setLoading(true);
 
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!regex.test(email)) {
+        setError("Email format is incorrect");
+    }
+
     try {
       if (password === confirmPassword) {
         await register(email, password);
@@ -81,7 +86,7 @@ const Register = () => {
             </button>
           </div>
         </form>
-        {error && <p>{error}</p>}
+        {error && <p className="error pt-4">{error}</p>}
       </div>
     </main>
   );
