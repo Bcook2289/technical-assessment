@@ -136,7 +136,7 @@ Ensure you have the following installed:
 1. **Clone the repository**:
     ```bash
     git clone [https://github.com/Bcook2289/technical-assessment.git]
-    cd frontend
+    cd technical-assessment/frontend
     ```
 
 2. **Install dependencies**:
@@ -216,6 +216,7 @@ Please provide an explanation of [INSERT TOPIC HERE]
 ### Translations
 
 This project also utilizes AI to provide accurate bilingual translations between English and Japanese to support clear communication and documentation.
+
 
 
 
