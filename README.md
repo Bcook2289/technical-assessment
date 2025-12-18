@@ -135,7 +135,7 @@ Ensure you have the following installed:
 
 1. **Clone the repository**:
     ```bash
-    git clone [https://github.com/sentient-band-site/frontend.git]
+    git clone [https://github.com/Bcook2289/technical-assessment.git]
     cd frontend
     ```
 
@@ -215,6 +215,7 @@ Please provide an explanation of [INSERT TOPIC HERE]
 ### Translations
 
 This project also utilizes AI to provide accurate bilingual translations between English and Japanese to support clear communication and documentation.
+
 
 
 
