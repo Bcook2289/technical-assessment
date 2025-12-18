@@ -172,6 +172,7 @@ Ensure you have the following installed:
 3. **Required Environment Variables**
    ```bash
    DATABASE_URL="file:./dev.db"
+   PORT
    FRONTEND_URL
    JWT_SECRET
    NODE_ENV //optional - only for production
@@ -215,6 +216,7 @@ Please provide an explanation of [INSERT TOPIC HERE]
 ### Translations
 
 This project also utilizes AI to provide accurate bilingual translations between English and Japanese to support clear communication and documentation.
+
 
 
 
